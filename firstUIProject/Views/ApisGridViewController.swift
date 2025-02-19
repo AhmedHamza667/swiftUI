@@ -27,29 +27,15 @@ class ApisGridViewController: UIViewController, UICollectionViewDataSource, UICo
 
 
     func fetchUsers() {
-            guard let url = URL(string: "https://reqres.in/api/users") else { return }
-            
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let error = error {
+            NetworkManager.shared.fetchUsers { result in
+                switch result {
+                case .success(let users):
+                    self.users = users
+                    self.apiCollectionView.reloadData()
+                case .failure(let error):
                     print("Error fetching users: \(error.localizedDescription)")
-                    return
                 }
-                
-                guard let data = data else {
-                    print("No data received")
-                    return
-                }
-                
-                do {
-                    let decodedResponse = try JSONDecoder().decode(UsersResponse.self, from: data)
-                    DispatchQueue.main.async {
-                        self.users = decodedResponse.data
-                        self.apiCollectionView.reloadData()
-                    }
-                } catch {
-                    print("Decoding Error: \(error.localizedDescription)")
-                }
-            }.resume()
+            }
         }
     }
 

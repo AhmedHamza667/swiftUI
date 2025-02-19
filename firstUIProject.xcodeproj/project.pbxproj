@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		77AADDCC2D5E44790081F3D9 /* Exceptions for "firstUIProject" folder in "firstUIProject" target */ = {
+		77E049092D65195F00C5713C /* Exceptions for "firstUIProject" folder in "firstUIProject" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -40,14 +40,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		77AADDA62D5E44760081F3D9 /* firstUIProject */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				77AADDCC2D5E44790081F3D9 /* Exceptions for "firstUIProject" folder in "firstUIProject" target */,
-			);
-			path = firstUIProject;
-			sourceTree = "<group>";
-		};
 		77AADDBD2D5E44790081F3D9 /* firstUIProjectTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = firstUIProjectTests;
@@ -56,6 +48,14 @@
 		77AADDC72D5E44790081F3D9 /* firstUIProjectUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = firstUIProjectUITests;
+			sourceTree = "<group>";
+		};
+		77E048FA2D65195F00C5713C /* firstUIProject */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				77E049092D65195F00C5713C /* Exceptions for "firstUIProject" folder in "firstUIProject" target */,
+			);
+			path = firstUIProject;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,7 +88,7 @@
 		77AADD9B2D5E44760081F3D9 = {
 			isa = PBXGroup;
 			children = (
-				77AADDA62D5E44760081F3D9 /* firstUIProject */,
+				77E048FA2D65195F00C5713C /* firstUIProject */,
 				77AADDBD2D5E44790081F3D9 /* firstUIProjectTests */,
 				77AADDC72D5E44790081F3D9 /* firstUIProjectUITests */,
 				77AADDA52D5E44760081F3D9 /* Products */,
@@ -121,7 +121,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				77AADDA62D5E44760081F3D9 /* firstUIProject */,
+				77E048FA2D65195F00C5713C /* firstUIProject */,
 			);
 			name = firstUIProject;
 			packageProductDependencies = (

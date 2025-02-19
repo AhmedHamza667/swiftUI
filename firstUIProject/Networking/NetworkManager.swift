@@ -8,7 +8,7 @@
 import Foundation
 
 class NetworkManager {
-    static let shared = NetworkManager() // Singleton 
+    static let shared = NetworkManager() // Singleton
     
     private init() {}
     

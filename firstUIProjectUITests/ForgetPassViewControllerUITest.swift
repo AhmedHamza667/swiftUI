@@ -32,7 +32,6 @@ final class ForgetPassViewControllerUITest: XCTestCase {
         app.buttons["Left"].tap()
         let homeLabel = app.staticTexts["Sign In"]
         XCTAssertTrue(homeLabel.exists)
-
     }
 
     func testPerformanceExample() throws {

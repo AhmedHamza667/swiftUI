@@ -13,7 +13,7 @@ class GridViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         myCollectionView.dataSource = self
-        // Do any additional setup after loading the view.
+//        self.navigationItem.hidesBackButton = true
     }
     
     @IBAction func logOutBtn(_ sender: Any) {

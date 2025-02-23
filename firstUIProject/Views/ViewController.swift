@@ -40,11 +40,23 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: "Error", message: "Email or password is incorrect", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         if loginViewModel.validEmail(email) && loginViewModel.validPassword(password){
-                    print("Succed")
+            NetworkManager.shared.login(email: email, password: password) { result in
+                switch result {
+                case .success(let token):
+                    print("Login successful, token: \(token)")
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     if let gridViewController = storyboard.instantiateViewController(withIdentifier: "GridViewController") as? GridViewController {
                         self.navigationController?.pushViewController(gridViewController, animated: true)
                     }
+                case .failure(let error):
+                    print("Login failed: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        self.present(alert, animated: true)
+                    }
+                }
+
+            }
+
         }
         else {
             self.present(alert, animated: true)
